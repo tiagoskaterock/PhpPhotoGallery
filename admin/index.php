@@ -12,14 +12,16 @@
 
   <div class="container-fluid">
 
-    <?php 
-      $sql = "SELECT * FROM users WHERE id = 2";
+    <?php       
 
-      $result = $database->query($sql);
+      $result_set = User::find_all_users();
 
-      $user_found = mysqli_fetch_array($result);
+      while($row = mysqli_fetch_array($result_set)) {
+        echo "<pre>";
+        print_r($row);
+        echo "</pre>";
+      }
 
-      echo $user_found['username'];
     ?>
 
     <div class="row">
