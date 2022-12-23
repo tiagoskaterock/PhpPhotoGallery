@@ -14,20 +14,27 @@
 
     <?php       
 
-      $user = User::find(10);
+      $id = 5;
+
+      $user = User::find($id);
+
+      echo 'User ' . $id;
 
       echo "<pre>";
       print_r($user);
       echo "</pre>";
       
+      echo "<hr>";
 
-      // $result_set = User::find_all();
+      $result_set = User::find_all();
 
-      // while($row = mysqli_fetch_array($result_set)) {
-      //   echo "<pre>";
-      //   print_r($row);
-      //   echo "</pre>";
-      // }
+      echo "All users";
+
+      while($row = mysqli_fetch_array($result_set)) {
+        echo "<pre>";
+        print_r($row);
+        echo "</pre>";
+      }
 
     ?>
 

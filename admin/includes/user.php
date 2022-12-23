@@ -2,16 +2,19 @@
 
 class User {
 
-	static function find_all() {
-		global $database;		
-		return $database->query("SELECT * FROM users");
+	static function find_all() {		
+		return self::query("SELECT * FROM users");
 	}
 
-	function find($id) {
-		global $database;		
-		$result = $database->query("SELECT * FROM users WHERE id = '$id'");
+	function find($id) {			
+		$result = self::query("SELECT * FROM users WHERE id = '$id'");
 		$user_found = mysqli_fetch_array($result);
 		return $user_found;
+	}
+
+	static function query($query) {
+		global $database;
+		return $database->query($query);
 	}
 
 }
