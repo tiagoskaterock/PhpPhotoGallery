@@ -14,13 +14,20 @@
 
     <?php       
 
-      $result_set = User::find_all_users();
+      $user = User::find(10);
 
-      while($row = mysqli_fetch_array($result_set)) {
-        echo "<pre>";
-        print_r($row);
-        echo "</pre>";
-      }
+      echo "<pre>";
+      print_r($user);
+      echo "</pre>";
+      
+
+      // $result_set = User::find_all();
+
+      // while($row = mysqli_fetch_array($result_set)) {
+      //   echo "<pre>";
+      //   print_r($row);
+      //   echo "</pre>";
+      // }
 
     ?>
 
