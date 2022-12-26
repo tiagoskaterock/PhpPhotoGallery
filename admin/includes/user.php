@@ -19,7 +19,16 @@ class User {
 
 	static function query($query) {
 		global $database;
-		return $database->query($query);
+
+		$the_obj_array = array();
+
+		$result_set = $database->query($query);
+
+		while ($row = mysqli_fetch_array($result_set)) {
+			$the_obj_array[] = self::instance($row);
+		}
+
+		return $the_obj_array;
 	}
 
 	static function instance($user) {
