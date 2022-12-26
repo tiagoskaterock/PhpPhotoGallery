@@ -14,27 +14,33 @@
 
     <?php       
 
-      $id = 5;
+      $user = new User();
 
-      $user = User::find($id);
+      $user->name = "Tiago Lemes";
+      $user->email = "tiago@gmail.com";
+      $user->passord = "123456";
 
-      echo 'User ' . $id;
+      // $id = 5;
+
+      // $user = User::find($id);
+
+      // echo 'User ' . $id;
 
       echo "<pre>";
       print_r($user);
       echo "</pre>";
       
-      echo "<hr>";
+      // echo "<hr>";
 
-      $result_set = User::find_all();
+      // $result_set = User::find_all();
 
-      echo "All users";
+      // echo "All users";
 
-      while($row = mysqli_fetch_array($result_set)) {
-        echo "<pre>";
-        print_r($row);
-        echo "</pre>";
-      }
+      // while($row = mysqli_fetch_array($result_set)) {
+      //   echo "<pre>";
+      //   print_r($row);
+      //   echo "</pre>";
+      // }
 
     ?>
 
