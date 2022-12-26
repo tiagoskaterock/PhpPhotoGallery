@@ -22,4 +22,19 @@ class User {
 		return $database->query($query);
 	}
 
+	static function instance($user) {
+		$obj = new self;
+
+		foreach ($obj as $property => $value) {
+			if ($obj->has_property($property)) {
+				$obj->property = $value;
+			}
+		}
+	}
+
+	private function has_property($property) {
+		$obj_properties = get_object_vars($this);
+		return array_key_exists($property, $obj_properties);
+	}
+
 }
